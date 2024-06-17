@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Plain Website</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>1689615643807</h1>
+            <p>
+                you have exactly 1 month to decode this, more hints will be
+                droping 👀 <br />
+                deadline is 17 july, 2024
+            </p>
+        </div>
+
+        <div class="counter" id="counter"></div>
+
+        <script>
+            const countDownDate = new Date("Jul 17, 2024 12:00:00").getTime();
+
+            const x = setInterval(function () {
+                const now = new Date().getTime();
+
+                const distance = countDownDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor(
+                    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                );
+                const minutes = Math.floor(
+                    (distance % (1000 * 60 * 60)) / (1000 * 60)
+                );
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById("counter").innerHTML =
+                    days +
+                    "d " +
+                    hours +
+                    "h " +
+                    minutes +
+                    "m " +
+                    seconds +
+                    "s ";
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("counter").innerHTML =
+                        "Time is up! 🎉";
+                }
+            }, 1000);
+        </script>
+    </body>
+</html>
